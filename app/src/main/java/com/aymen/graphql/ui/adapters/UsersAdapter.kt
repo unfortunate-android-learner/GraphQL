@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aymen.graphql.R
-import com.aymen.graphql.UsersListQuery
+import com.aymen.graphql.UsersListtQuery
 import com.aymen.graphql.databinding.ItemsUsersBinding
 
 /**
@@ -18,7 +18,7 @@ class UsersAdapter(listener: ClickListener) : RecyclerView.Adapter<UsersAdapter.
 
     private lateinit var context: Context
     private var selectedItemPosition: Int
-    private var users: ArrayList<UsersListQuery.User>
+    private var users: ArrayList<UsersListtQuery.User>
     private val listener: ClickListener
 
     init {
@@ -28,7 +28,7 @@ class UsersAdapter(listener: ClickListener) : RecyclerView.Adapter<UsersAdapter.
     }
 
     //set users list and notify adapter to refresh
-    fun setUsers(users: ArrayList<UsersListQuery.User>){
+    fun setUsers(users: ArrayList<UsersListtQuery.User>){
         this.users = ArrayList(users)
         notifyDataSetChanged()
     }

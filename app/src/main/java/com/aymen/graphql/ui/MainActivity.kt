@@ -8,7 +8,7 @@ import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.apollographql.apollo3.ApolloClient
-import com.aymen.graphql.UsersListQuery
+import com.aymen.graphql.UsersListtQuery
 import com.aymen.graphql.apollo.ApolloInstance
 import com.aymen.graphql.ui.adapters.UsersAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), UsersAdapter.ClickListener {
 
     private lateinit var client: ApolloClient
 
-    private lateinit var arrayList: ArrayList<UsersListQuery.User>
+    private lateinit var arrayList: ArrayList<UsersListtQuery.User>
     private lateinit var adapter: UsersAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), UsersAdapter.ClickListener {
     private fun getUsersList() {
         lifecycleScope.launchWhenResumed {
             val response = try {
-                client.query(UsersListQuery(10)).execute()
+                client.query(UsersListtQuery(10)).execute()
             }catch (e : ApolloException){
                 binding.tvLoading.text = resources.getString(R.string.protocol_error)
                 binding.tvLoading.visibility = View.VISIBLE

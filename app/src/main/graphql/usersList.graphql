@@ -1,4 +1,4 @@
-query UsersList($limit:Int!) {
+query UsersListt($limit:Int!) {
   users(limit: $limit, order_by: {timestamp: desc}) {
     id
     name
